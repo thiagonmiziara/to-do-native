@@ -38,12 +38,20 @@ export function Home() {
     setTasks(updatedTasks);
   }
 
+  function handleEditTask(taskId: number, taskNewTitle: string) {
+    const editTask = tasks.map((task) => ({ ...task }));
+    const editedTask = editTask.find((task) => task.id === taskId);
+    if (!editedTask) return;
+    editedTask.title = taskNewTitle;
+    setTasks(editTask);
+  }
+
   function handleRemoveTask(id: number) {
     //TODO - remove task from state
     const filteredTasks = tasks.filter((task) => task.id !== id);
     Alert.alert(
-      "Deseja remover essa task",
-      "Tem certeza que deseja remover essa task?",
+      "Remover item",
+      "Tem certeza que você deseja remover esse item?",
       [
         {
           text: "Não",
@@ -63,6 +71,7 @@ export function Home() {
         tasks={tasks}
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask}
+        editTask={handleEditTask}
       />
     </View>
   );
@@ -71,6 +80,6 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EBEBEB",
+    backgroundColor: "#272626",
   },
 });

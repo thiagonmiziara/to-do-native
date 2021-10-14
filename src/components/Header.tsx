@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     paddingTop: getStatusBarHeight(true) + 16,
     paddingHorizontal: 24,
     paddingBottom: 60,
-    backgroundColor: "#8257E5",
+    backgroundColor: "#28dafae2",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   tasksCounter: {
-    fontSize: 15,
+    fontSize: 16,
     color: "#FFF",
     fontFamily: "Inter-Regular",
   },
   tasksCounterBold: {
-    fontSize: 15,
+    fontSize: 16,
     color: "#FFF",
     fontFamily: "Inter-Bold",
   },
