@@ -41,7 +41,16 @@ export function Home() {
   function handleRemoveTask(id: number) {
     //TODO - remove task from state
     const filteredTasks = tasks.filter((task) => task.id !== id);
-    setTasks(filteredTasks);
+    Alert.alert(
+      "Deseja remover essa task",
+      "Tem certeza que deseja remover essa task?",
+      [
+        {
+          text: "Não",
+        },
+        { text: "Sim", onPress: () => setTasks(filteredTasks) },
+      ]
+    );
   }
 
   return (
